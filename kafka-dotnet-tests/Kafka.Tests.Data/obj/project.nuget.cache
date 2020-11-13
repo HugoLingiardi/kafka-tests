@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8/wOOP3/+LTRiW4tEChYP/P/a7Uqgjd9xz26D5/cKbtlh02cXJwvpm6tCqoMA6vTU7KIXioE2xtXHaETYBs0gQ==",
+  "success": true,
+  "projectFilePath": "C:\\crs\\kafka-tests\\kafka-dotnet-tests\\Kafka.Tests.Data\\Kafka.Tests.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hugol\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\hugol\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
