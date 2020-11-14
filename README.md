@@ -1,3 +1,4 @@
+
 # Descrição do projeto
 
 Projeto em dotnet core 3.1 utilizando Hosted Services para criar um app que produz e consome mensagens através de um servidor Kafka.
@@ -15,13 +16,19 @@ Utilizei docker para subir imagens do Kafka, Zoekeeper e do próprio app criado 
 
 # Referências utilizadas
 
-**dotnet add package Microsoft.Extensions.DependencyInjection
-**dotnet add package Microsoft.Extensions.Configuration**
-**dotnet add package Microsoft.Extensions.Hosting**
-**dotnet add package Serilog.Sinks.Console**
-**dotnet add package Confluent.Kafka -version 1.4.4**
-**dotnet add package Moq**
-**dotnet add package FluentAssertions**
+ **dotnet add package Microsoft.Extensions.DependencyInjection**
+ 
+ **dotnet add package Microsoft.Extensions.Configuration**
+ 
+ **dotnet add package Microsoft.Extensions.Hosting**
+ 
+ **dotnet add package Serilog.Sinks.Console**
+ 
+ **dotnet add package Confluent.Kafka -version 1.4.4**
+ 
+ **dotnet add package Moq**
+ 
+ **dotnet add package FluentAssertions**
 
 # Comandos para o Docker
 
