@@ -26,7 +26,6 @@ namespace Kafka.Tests.Core.Services
 
         public void Dispose()
         {
-            producer?.Flush();
             producer?.Dispose();
         }
 

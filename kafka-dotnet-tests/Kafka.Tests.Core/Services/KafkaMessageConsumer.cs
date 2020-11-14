@@ -22,7 +22,7 @@ namespace Kafka.Tests.Core.Services
             consumer = new ConsumerBuilder<Ignore, IdentifiedMessage>(new ConsumerConfig
             {
                 BootstrapServers = configuration.ServerUrl,
-                GroupId = $"{configuration.TopicName}-group",
+                GroupId = $"{configuration.TopicName}-group-{new Random().Next(15)}",
                 AutoOffsetReset = AutoOffsetReset.Earliest,
             }).SetValueDeserializer(new CustomJsonDeserializer<IdentifiedMessage>()).Build();
 
