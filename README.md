@@ -9,20 +9,20 @@ Utilizei docker para subir imagens do Kafka, Zoekeeper e do próprio app criado 
 
 # Diretórios
 
- -**Kafka.Tests.HostedService** - Projeto com o o HostedService para iniciar o app. 
- -**Kafka.Tests.Core** - Projeto com os serviços e interfaces que são injetados no app. 
- -**Kafka.Tests.Data** - Projeto com os modelos de dados que são trafegados no app. 
- -**Kafka.Tests.Tests** - Projeto básico com testes em alguns serviços do projeto Core.
+ - **Kafka.Tests.HostedService** - Projeto com o o HostedService para iniciar o app. 
+ - **Kafka.Tests.Core** - Projeto com os serviços e interfaces que são injetados no app. 
+ - **Kafka.Tests.Data** - Projeto com os modelos de dados que são trafegados no app. 
+ - **Kafka.Tests.Tests** - Projeto básico com testes em alguns serviços do projeto Core.
 
 # Referências utilizadas
 
- -**dotnet add package Microsoft.Extensions.DependencyInjection** 
- -**dotnet add package Microsoft.Extensions.Configuration** 
- -**dotnet add package Microsoft.Extensions.Hosting** 
- -**dotnet add package Serilog.Sinks.Console** 
- -**dotnet add package Confluent.Kafka -version 1.4.4** 
- -**dotnet add package Moq** 
- -**dotnet add package FluentAssertions**
+ - **dotnet add package Microsoft.Extensions.DependencyInjection** 
+ - **dotnet add package Microsoft.Extensions.Configuration** 
+ - **dotnet add package Microsoft.Extensions.Hosting** 
+ - **dotnet add package Serilog.Sinks.Console** 
+ - **dotnet add package Confluent.Kafka -version 1.4.4** 
+ - **dotnet add package Moq** 
+ - **dotnet add package FluentAssertions**
 
 # Comandos para o Docker
 
