@@ -1,10 +1,11 @@
+using System;
 using System.Threading.Tasks;
 using Kafka.Tests.Data.Models;
 
 namespace Kafka.Tests.Core.Services
 {
-    public interface IMessageProducer
+    public interface IMessageProducer : IDisposable
     {
-        Task SendMessage(Message message);
+        Task ProduceMessage(Message message);
     }
 }

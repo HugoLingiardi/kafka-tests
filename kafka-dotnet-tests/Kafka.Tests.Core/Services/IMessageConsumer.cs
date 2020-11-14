@@ -1,9 +1,11 @@
+using System;
+using System.Threading;
 using Kafka.Tests.Data.Models;
 
 namespace Kafka.Tests.Core.Services
 {
-    public interface IMessageConsumer
+    public interface IMessageConsumer : IDisposable
     {
-        Message ConsumeMessage();
+        IdentifiedMessage ConsumeMessage(CancellationToken cancellationToken);
     }
 }

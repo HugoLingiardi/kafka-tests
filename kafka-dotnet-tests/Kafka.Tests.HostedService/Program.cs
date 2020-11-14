@@ -8,9 +8,18 @@ namespace Kafka.Tests.HostedService
     {
         static async Task Main(string[] args)
         {
-            var hostBuilder = HostBuilderFactory.CreateHostBuilder();
+            Console.WriteLine("Vou iniciar o HostService.");
 
-            await hostBuilder.RunConsoleAsync();
+            try
+            {
+                var hostBuilder = HostBuilderFactory.CreateHostBuilder();
+
+                await hostBuilder.RunConsoleAsync();
+            }
+            catch (System.Exception ex)
+            {
+                Console.WriteLine($"Erro ao iniciar programa, exceção: {ex}");
+            }
         }
     }
 }

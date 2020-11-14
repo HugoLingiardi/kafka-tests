@@ -1,9 +1,0 @@
-C:\crs\kafka-tests\kafka-dotnet-tests\Kafka.Tests.Data\bin\Debug\netstandard2.0\Kafka.Tests.Data.deps.json
-C:\crs\kafka-tests\kafka-dotnet-tests\Kafka.Tests.Data\bin\Debug\netstandard2.0\Kafka.Tests.Data.dll
-C:\crs\kafka-tests\kafka-dotnet-tests\Kafka.Tests.Data\bin\Debug\netstandard2.0\Kafka.Tests.Data.pdb
-C:\crs\kafka-tests\kafka-dotnet-tests\Kafka.Tests.Data\obj\Debug\netstandard2.0\Kafka.Tests.Data.csprojAssemblyReference.cache
-C:\crs\kafka-tests\kafka-dotnet-tests\Kafka.Tests.Data\obj\Debug\netstandard2.0\Kafka.Tests.Data.AssemblyInfoInputs.cache
-C:\crs\kafka-tests\kafka-dotnet-tests\Kafka.Tests.Data\obj\Debug\netstandard2.0\Kafka.Tests.Data.AssemblyInfo.cs
-C:\crs\kafka-tests\kafka-dotnet-tests\Kafka.Tests.Data\obj\Debug\netstandard2.0\Kafka.Tests.Data.csproj.CoreCompileInputs.cache
-C:\crs\kafka-tests\kafka-dotnet-tests\Kafka.Tests.Data\obj\Debug\netstandard2.0\Kafka.Tests.Data.dll
-C:\crs\kafka-tests\kafka-dotnet-tests\Kafka.Tests.Data\obj\Debug\netstandard2.0\Kafka.Tests.Data.pdb

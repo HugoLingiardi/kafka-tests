@@ -1,4 +1,5 @@
 using System.IO;
+using Kafka.Tests.Core.Config;
 using Kafka.Tests.Core.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,6 +32,16 @@ namespace Kafka.Tests.HostedService
         {
             services.AddSingleton<ILogger>(i => new LoggerConfiguration().WriteTo.Console().CreateLogger());
             services.AddSingleton<IUniqueIdentifier, HostedServiceUniqueIdentifier>();
+
+            services.AddSingleton<KafkaServerConfiguration>(x =>
+            {
+                //var config = x.GetRequiredService<IConfiguration>();
+
+                var kafkaServer = "0.0.0.0:9092";  //config["kafka-server"];
+                var kafkaTopic = "kafka-tests"; //config["kafka-topic"];
+                
+                return new KafkaServerConfiguration(kafkaServer, kafkaTopic);
+            });
 
             services.AddScoped<IMessageConsumer, KafkaMessageConsumer>();
             services.AddScoped<IMessageProducer, KafkaMessageProducer>();
