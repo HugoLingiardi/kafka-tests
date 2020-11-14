@@ -32,7 +32,8 @@ namespace Kafka.Tests.HostedService
         private static void ConfigureServices(HostBuilderContext hostContext, IServiceCollection services)
         {
             services.AddSingleton<ILogger>(i => new LoggerConfiguration().WriteTo.Console().CreateLogger());
-            services.AddSingleton<IUniqueIdentifier, HostedServiceUniqueIdentifier>(x => {
+            services.AddSingleton<IUniqueIdentifier, HostedServiceUniqueIdentifier>(x =>
+            {
                 var identifier = new HostedServiceUniqueIdentifier();
                 var logger = x.GetRequiredService<ILogger>();
 
@@ -44,11 +45,19 @@ namespace Kafka.Tests.HostedService
 
             services.AddSingleton<KafkaServerConfiguration>(x =>
             {
-                //var config = x.GetRequiredService<IConfiguration>();
+                var logger = x.GetRequiredService<ILogger>();
+                var config = x.GetRequiredService<IConfiguration>();
 
-                var kafkaServer = "localhost:9092";  //config["kafka-server"];
-                var kafkaTopic = "kafka-tests"; //config["kafka-topic"];
-                
+                var serverUrl = config["KAFKA_DOCKER_SERVER"];
+
+                if (!string.IsNullOrEmpty(serverUrl))
+                    logger.Information($"ServerUrl from outside - {serverUrl}");
+                else
+                    serverUrl = "localhost:9092";
+
+                var kafkaServer = serverUrl;
+                var kafkaTopic = "kafka-tests";
+
                 return new KafkaServerConfiguration(kafkaServer, kafkaTopic);
             });
 

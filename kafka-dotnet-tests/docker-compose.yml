@@ -24,12 +24,14 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
-  # kafka-tests-hostedservice:
-  #   image: kafka-tests-hostedservice:dev
-  #   networks:
-  #     - net
-  #   depends_on: 
-  #     - kafka
+  kafka-tests-hostedservice:
+    image: kafka-tests-hostedservice:dev
+    networks:
+      - net
+    depends_on: 
+      - kafka
+    environment: 
+      KAFKA_DOCKER_SERVER: kafka:29092
 
 networks: 
   net:

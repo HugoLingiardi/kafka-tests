@@ -15,6 +15,8 @@ RUN dotnet restore ./Kafka.Tests.HostedService/Kafka.Tests.HostedService.csproj
 # Copy everything else and build
 COPY ./ ./
 
+RUN dotnet test ./Kafka.Tests.Tests
+
 # Run Publish
 RUN dotnet publish ./Kafka.Tests.HostedService -c Release -o out
 
