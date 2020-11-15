@@ -1,11 +1,11 @@
 using System.IO;
 using Kafka.Tests.Core.Adapters;
 using Kafka.Tests.Core.Config;
+using Kafka.Tests.Core.Logger;
 using Kafka.Tests.Core.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Serilog;
 
 namespace Kafka.Tests.HostedService
 {
@@ -31,14 +31,13 @@ namespace Kafka.Tests.HostedService
 
         private static void ConfigureServices(HostBuilderContext hostContext, IServiceCollection services)
         {
-            services.AddSingleton<ILogger>(i => new LoggerConfiguration().WriteTo.Console().CreateLogger());
+            services.AddSingleton<ILogger, SerilogLogger>();
             services.AddSingleton<IUniqueIdentifier, HostedServiceUniqueIdentifier>(x =>
             {
                 var identifier = new HostedServiceUniqueIdentifier();
                 var logger = x.GetRequiredService<ILogger>();
 
-                logger.Information($"Actual id - {identifier.GetUniqueIdentifier()}");
-
+                logger.LogInformation($"Actual id - {identifier.GetUniqueIdentifier()}");
 
                 return identifier;
             });
@@ -51,7 +50,7 @@ namespace Kafka.Tests.HostedService
                 var serverUrl = config["KAFKA_DOCKER_SERVER"];
 
                 if (!string.IsNullOrEmpty(serverUrl))
-                    logger.Information($"ServerUrl from outside - {serverUrl}");
+                    logger.LogInformation($"ServerUrl from outside - {serverUrl}");
                 else
                     serverUrl = "localhost:9092";
 

@@ -2,9 +2,8 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Kafka.Tests.Core.Adapters;
-using Kafka.Tests.Core.Services;
+using Kafka.Tests.Core.Logger;
 using Microsoft.Extensions.Hosting;
-using Serilog;
 
 namespace Kafka.Tests.HostedService
 {
@@ -23,7 +22,7 @@ namespace Kafka.Tests.HostedService
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            logger.Information("Consumer Hosted Service is initiliazed.");
+            logger.LogInformation("Consumer Hosted Service is initiliazed.");
 
             running = true;
 
@@ -39,13 +38,13 @@ namespace Kafka.Tests.HostedService
                 var identifiedMessage = messageConsumerAdapter.ConsumeMessage(cancellationToken);
 
                 if (identifiedMessage != null)
-                    logger.Information($"Message received - parent id : {identifiedMessage.ParentId} id: {identifiedMessage.Message.Id} value: {identifiedMessage.Message.Value} timestamp: {identifiedMessage.Message.Timestamp}");
+                    logger.Log(LogType.Information, $"Message received - parent id : {identifiedMessage.ParentId} id: {identifiedMessage.Message.Id} value: {identifiedMessage.Message.Value} timestamp: {identifiedMessage.Message.Timestamp}");
             }
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            logger.Information("Consumer Hosted Service is stopped.");
+            logger.LogInformation("Consumer Hosted Service is stopped.");
 
             running = false;
 

@@ -2,10 +2,10 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Kafka.Tests.Core.Adapters;
+using Kafka.Tests.Core.Logger;
 using Kafka.Tests.Core.Services;
 using Kafka.Tests.Data.Models;
 using Microsoft.Extensions.Hosting;
-using Serilog;
 
 namespace Kafka.Tests.HostedService
 {
@@ -19,7 +19,7 @@ namespace Kafka.Tests.HostedService
         public ProducerHostedService(ILogger logger, MessageProducerAdapter messageProducerAdapter)
         {
             this.logger = logger;
-            this.messageProducerAdapter = messageProducerAdapter;            
+            this.messageProducerAdapter = messageProducerAdapter;
         }
 
         private async void ProduceMessage(object state)
@@ -29,7 +29,7 @@ namespace Kafka.Tests.HostedService
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            logger.Information("Producer Hosted Service is initialized.");
+            logger.LogInformation("Producer Hosted Service is initialized.");
 
             timer = new Timer(ProduceMessage, null, TimeSpan.Zero, TimeSpan.FromSeconds(5));
 
@@ -38,7 +38,7 @@ namespace Kafka.Tests.HostedService
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            logger.Information("Producer Hosted Service is stopped.");
+            logger.LogInformation("Producer Hosted Service is stopped.");
 
             timer?.Change(Timeout.Infinite, 0);
 

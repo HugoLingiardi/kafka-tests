@@ -28,6 +28,8 @@ Utilizei docker para subir imagens do Kafka, Zoekeeper e do próprio app criado 
 
 Abaixo se encontram os comandos para criar o container do app no Docker e iniciar o processo com 10 instâncias do app para testes.
 
+O arquivo **Dockerfile** se encontra na pasta raiz da pasta **kafka-dotnet-tests**.
+
 >Criar imagem do projeto dotnet.
 **docker build -t kafka-tests-hostedservice .**
 
